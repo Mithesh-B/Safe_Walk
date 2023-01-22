@@ -24,7 +24,7 @@
     ></script>
 
     <script defer src="script.js"></script>
-    <script src="/dist/leaflet-heat.js"></script>
+    <script src="leaflet-heat.js"></script>
     <title>Safe Walk</title>
   </head>
   <body>
@@ -61,11 +61,16 @@
               maxlength="30"
               class="form__input form__input--title"
               placeholder="type of incident"
+              required
             />
           </div>
           <div class="form__row">
             <label for="gender" class="form__label">Gender*</label>
-            <select name="gender" class="form__input form__input--gender">
+            <select
+              name="gender"
+              class="form__input form__input--gender"
+              required
+            >
               <option value="" disabled selected>gender</option>
               <option value="female">Female</option>
               <option value="male">Male</option>
@@ -80,23 +85,24 @@
               maxlength="15"
               class="form__input form__input--username"
               placeholder="username/alias"
+              required
             />
           </div>
           <div class="form__row">
             <label class="form__label">Date of incident*</label>
-            <input type="date" class="form__input form__input--date" />
+            <input type="date" class="form__input form__input--date" required />
           </div>
           <div class="form__row">
             <label class="form__label">Age*</label>
-            <input type="number" class="form__input form__input--age" />
+            <input
+              type="number"
+              class="form__input form__input--age"
+              required
+            />
           </div>
           <div class="form__row">
             <label class="form__label">Time of incident*</label>
-            <input
-              type="time"
-              class="form__input form__input--time"
-              placeholder="hrs:mins"
-            />
+            <input type="time" class="form__input form__input--time" required />
           </div>
           <div class="form__row">
             <label class="form__label">Description</label>
