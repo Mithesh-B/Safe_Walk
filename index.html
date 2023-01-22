@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source Code Pro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+
+    <script defer src="script.js"></script>
+    <script src="/dist/leaflet-heat.js"></script>
+    <title>Safe Walk</title>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div class="sidebar">
+      <div class="center">
+        <h1>
+          <span>Safe_Walk</span>
+
+          <span>Safe_Walk</span>
+          <span>Safe_Walk</span>
+        </h1>
+      </div>
+      <p class="about">
+        This website allows citizens to log and report
+        <mark>issues and problems</mark> encountered in
+        <mark>public areas</mark>.<br />
+        <br />The goal is to raise <mark>public awarness</mark> and address
+        concerns for individuals who feel <mark>unsafe</mark> while walking
+        alone. <br /><br />
+        By clicking on any location on the <mark>map</mark> where such an
+        incident occured, a <mark>form</mark> will appear where details of the
+        issue can be recorded and stored. These reports will be marked on the
+        <mark>map as unsafe areas</mark>, providing valuable information to aid
+        in making informed and safe decisions when navigating these areas.
+      </p>
+      <ul class="content">
+        <form class="form hidden">
+          <div class="form__row">
+            <label class="form__label">Title*</label>
+            <input
+              input
+              type="text"
+              maxlength="30"
+              class="form__input form__input--title"
+              placeholder="type of incident"
+            />
+          </div>
+          <div class="form__row">
+            <label for="gender" class="form__label">Gender*</label>
+            <select name="gender" class="form__input form__input--gender">
+              <option value="" disabled selected>gender</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="transgender">Transgender</option>
+              <option value="nonbinary">Non-Binary</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label class="form__label">Username*</label>
+            <input
+              maxlength="15"
+              class="form__input form__input--username"
+              placeholder="username/alias"
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Date of incident*</label>
+            <input type="date" class="form__input form__input--date" />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Age*</label>
+            <input type="number" class="form__input form__input--age" />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Time of incident*</label>
+            <input
+              type="time"
+              class="form__input form__input--time"
+              placeholder="hrs:mins"
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Description</label>
+            <textarea
+              class="form__input form__input--description"
+              name="description"
+              placeholder="Describe the incident if you feel comfortable sharing."
+              rows="6"
+            ></textarea>
+          </div>
+          <div></div>
+          <div><button class="form__btn" role="button">Submit</button></div>
+          <div class="mandatory">Fields marked with * are mandatory.</div>
+        </form>
+      </ul>
+    </div>
+  </body>
+</html>
