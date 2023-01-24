@@ -1,5 +1,6 @@
 # Safe_Walk
 This website allows citizens to log and report issues and problems encountered in public areas.
+mithesh-b.github.io/Safe_Walk/
 
 The goal is to raise public awarness and address concerns for individuals who feel unsafe while walking alone.
 
