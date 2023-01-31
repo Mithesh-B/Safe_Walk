@@ -107,7 +107,7 @@ mark {
   display: none;
 }
 .center {
-  font-family:'beyno-testregular', sans-serif;
+  font-family:'beyno-testregular',"Source Code Pro", sans-serif;
 font-size: 20px;
   align-self: center;
   margin-bottom: 10%;
