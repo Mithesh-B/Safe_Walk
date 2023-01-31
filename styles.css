@@ -3,7 +3,14 @@
   padding: 0;
   box-sizing: inherit;
 }
+@font-face {
+  font-family: 'beyno-testregular';
+  src: url('beyno-test-regular-webfont.woff2') format('woff2'),
+       url('beyno-test-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 
+}
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -100,56 +107,14 @@ mark {
   display: none;
 }
 .center {
+  font-family:'beyno-testregular', sans-serif;
+font-size: 20px;
   align-self: center;
-  margin-bottom: 20%;
-  margin-top: 15%;
+  margin-bottom: 10%;
+  margin-top: 10%;
   top: 50%;
+  color: rgb(49, 49, 49);
 
-  transform: prespective(1000px) translate(-50%, -50%);
-  transform: skewY(15deg);
-  transition: 0.5s;
-}
-
-.center:hover {
-  transform: prespective(1000px) translate(-50%, -50%);
-  transform: skewY(0deg);
-}
-
-.center h1 span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  padding: 0;
-
-  font-size: 2em;
-  color: rgb(59, 59, 59);
-  transform-style: preserve-3d;
-  transition: 0.8s;
-}
-.center h1 span:nth-child(1) {
-  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-}
-
-.center h1 span:nth-child(2) {
-  color: #5e17eb;
-  transform: translate(-50%, -50%) skewX(-60deg);
-  left: -6px;
-  clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
-}
-
-.center h1 span:nth-child(3) {
-  transform: translate(-50%, -50%) skewY(0deg);
-  left: -12px;
-  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
-}
-
-.center:hover h1 span:nth-child(2),
-.center:hover h1 span:nth-child(3) {
-  transform: translate(-50%, -50%) skewX(0deg);
-  left: 0;
-  color: rgb(59, 59, 59);
 }
 
 /* Form input styles */
@@ -289,16 +254,7 @@ select {
   font-weight: bold;
 }
 
-/* Responsive styles */
-@media (min-width: 768px) {
-  /* Change the width of the sidebar and map on larger screens */
-  .sidebar {
-    width: 30%;
-  }
-  #map {
-    width: 70%;
-  }
-}
+
 .leaflet-popup .leaflet-popup-content-wrapper {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
     rgb(209, 213, 219) 0px 0px 0px 1px inset;
@@ -316,4 +272,36 @@ select {
 
 .leaflet-popup .leaflet-popup-tip {
   background-color: #c8e6db;
+}
+/* responsive */
+@media only screen and (max-width: 767px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    left: 0;
+    top: 0;
+    box-shadow: none;
+    border-radius: 0;
+
+    overflow-x: hidden;
+  }
+  #map{
+    width: 100%;
+    height: 40%;
+    position: relative;
+ 
+    left: 0;
+    top: 0;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 5px;
+    padding: 100px;
+  }
+  body{
+    padding: 0px;
+  }
+  form{
+    width: 100%;
+  }
 }
