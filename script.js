@@ -119,8 +119,6 @@ form.addEventListener("submit", function (e) {
 
   renderWorkout(htmlForm);
 
-  console.log(heatPoints);
-
   inputValues.push(htmlForm);
   //make rendered value clickable and pan map to clicked value
   content.addEventListener("click", (e) => {
