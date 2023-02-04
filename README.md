@@ -9,7 +9,7 @@ Safe Walk is a website that allows citizens to log and report safety issues and 
 - Support
 
 ## Features
-1. Easy-to-use form for reporting safety incidents in public areas
+1. Easy-to-use form for reporting unsafe incidents in public areas
 2. Interactive map with markers for each reported incident
 3. Heatmap displaying high-risk areas based on reported incidents
 4. Information to aid in making informed and safe decisions when navigating public areas
