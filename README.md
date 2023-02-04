@@ -14,7 +14,7 @@ Safe Walk is a website that allows citizens to log and report safety issues and 
 3. Heatmap displaying high-risk areas based on reported incidents
 4. Information to aid in making informed and safe decisions when navigating public areas
 
-33 Installation
+## Installation
 You can use Safe Walk directly from the [live preview](https://mithesh-b.github.io/Safe_Walk/). No installation is required.
 
 ## Usage
