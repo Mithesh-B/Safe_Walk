@@ -30,7 +30,7 @@ If you would like to contribute to the development of Safe Walk, please feel fre
 For any questions or issues with Safe Walk, please use the GitHub page to open an issue.
 
 ## License
-Safe Walk uses the MIT License. The Leaflet.js and Leaflet.heat libraries are also licensed under MIT.
+Safe Walk uses the GNU General Public License v3.0. The Leaflet.js and Leaflet.heat libraries are licensed under MIT.
 
 For more information on Leaflet.js and Leaflet.heat, visit the official [Leaflet.js](https://leafletjs.com/) and [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat) websites.
 
