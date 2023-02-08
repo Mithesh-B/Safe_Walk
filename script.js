@@ -1,4 +1,5 @@
 "use strict";
+
 const form = document.querySelector(".form");
 const inputTitle = document.querySelector(".form__input--title");
 const inputGender = document.querySelector(".form__input--gender");
@@ -14,25 +15,34 @@ const image = document.querySelector(".center");
 let latitude, longitude;
 // geolocation
 function getPosition(callback) {
+
   navigator.geolocation.getCurrentPosition(
     (position) => {
       latitude = position.coords.latitude;
       longitude = position.coords.longitude;
+    
       callback([latitude, longitude]);
     },
     //if location denied use default location
+
     function (error) {
+
       if (error.code == error.PERMISSION_DENIED)
-        callback([12.972442, 77.580643]);
+
+      callback([12.972442, 77.580643]);
     }
   );
 }
+
 let htmlForm;
 let map;
 let mapEvent;
 let inputValues = [];
+
 //leaflet.js library for 3rd party map
+
 getPosition((coordinates) => {
+
   map = L.map("map").setView(coordinates, 13);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
@@ -41,29 +51,37 @@ getPosition((coordinates) => {
   }).addTo(map);
 
   map.on("click", function (mapEv) {
+
     mapEvent = mapEv;
+
     //show form
     form.classList.remove("hidden");
     inputTitle.focus();
+
     //hide text
     about.classList.add("hidden");
     image.classList.add("hidden");
+
+   document.querySelector("footer").style.display = "none";
+
   });
 });
 
 image.addEventListener("click", function (e) {
   e.preventDefault();
+
   //show text
   about.classList.remove("hidden");
 });
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+
   //create unique id
+
   const id = (Date.now() + "").slice(-10);
   const title = inputTitle.value;
   const date = inputDate.value;
-
   const { lat, lng } = mapEvent.latlng;
 
   //collect form data
@@ -78,6 +96,7 @@ form.addEventListener("submit", function (e) {
     id: id,
     coords: [lat, lng],
   };
+
   const dateFormat = date.split("-").reverse().join("-");
 
   //display marker via leaflet.js library
@@ -115,15 +134,18 @@ form.addEventListener("submit", function (e) {
 
     form.insertAdjacentHTML("afterend", html);
   }
-  form.classList.add("hidden");
 
+  form.classList.add("hidden");
   renderWorkout(htmlForm);
 
   inputValues.push(htmlForm);
+
   //make rendered value clickable and pan map to clicked value
   content.addEventListener("click", (e) => {
+
     //finding closest class to content
     const closestContent = e.target.closest(".info");
+    
     if (!closestContent) return;
     //checking id of markup === id of info
     const info = inputValues.find(
