@@ -254,6 +254,11 @@ select {
   font-weight: bold;
 }
 
+footer{
+  text-align: center;
+  
+  font-size: small;
+}
 
 .leaflet-popup .leaflet-popup-content-wrapper {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
@@ -296,7 +301,7 @@ select {
     box-shadow: none;
     border-radius: 0;
     margin: 5px;
- 
+
   }
   body{
     padding: 0px;
