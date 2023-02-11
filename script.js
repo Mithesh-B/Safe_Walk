@@ -101,12 +101,11 @@ form.addEventListener("submit", function (e) {
 
   //display marker via leaflet.js library
   const heatPoints = [[lat, lng]];
-
+  
   L.heatLayer(heatPoints, {
     radius: 25,
-    blur: 25,
-    minOpacity: 0.7,
-    zoom: 10,
+    
+   
   }).addTo(map);
 
   L.marker([lat, lng])
@@ -153,7 +152,7 @@ form.addEventListener("submit", function (e) {
     );
 
     //panning map to the clicked id
-    map.setView(info.coords, 13, {
+    map.setView(info.coords, 18, {
       animate: true,
       pan: {
         duration: 1,
@@ -171,3 +170,22 @@ form.addEventListener("submit", function (e) {
     inputUsername.value =
       "";
 });
+
+
+$.get('./data.csv', function(csvString) {
+
+  // Use PapaParse to transform file into arrays
+  var data = Papa.parse(csvString.trim()).data.filter(
+    function(row) { return row.length === 2 }
+  ).map(function(a) {
+    return [ parseFloat(a[0]), parseFloat(a[1]) ]
+  })
+
+  // Add all points into a heat layer
+  var heat = L.heatLayer(data, {
+    radius: 25
+  })
+
+  // Add the heatlayer to the map
+  heat.addTo(map)
+})
