@@ -43,7 +43,7 @@ let inputValues = [];
 
 getPosition((coordinates) => {
 
-  map = L.map("map").setView(coordinates, 13);
+  map = L.map("map").setView(coordinates, 11);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution:
@@ -170,22 +170,3 @@ form.addEventListener("submit", function (e) {
     inputUsername.value =
       "";
 });
-
-
-$.get('./data.csv', function(csvString) {
-
-  // Use PapaParse to transform file into arrays
-  var data = Papa.parse(csvString.trim()).data.filter(
-    function(row) { return row.length === 2 }
-  ).map(function(a) {
-    return [ parseFloat(a[0]), parseFloat(a[1]) ]
-  })
-
-  // Add all points into a heat layer
-  var heat = L.heatLayer(data, {
-    radius: 25
-  })
-
-  // Add the heatlayer to the map
-  heat.addTo(map)
-})
