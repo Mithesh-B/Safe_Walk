@@ -1,6 +1,10 @@
 # Safe Walk
 Safe Walk is a website that allows citizens to log and report safety issues and problems encountered in public areas. Its goal is to raise public awareness and address concerns for individuals who feel unsafe while walking alone.
 
+![img preview](https://user-images.githubusercontent.com/115478939/216237673-6b97b6bc-25a9-49e2-b176-2ae7af155813.png)
+![screencapture-mithesh-b-github-io-Safe-Walk-2023-03-02-15_07_38](https://user-images.githubusercontent.com/115478939/222391458-400b3d7c-eb65-4323-95ca-ebb001d03a5f.png)
+
+
 ## Table of Contents
 - Features
 - Installation
@@ -36,5 +40,6 @@ For more information on Leaflet.js and Leaflet.heat, visit the official [Leaflet
 
 ## Copyright
 Copyright © Mithesh. All rights reserved.
+![screenshot-mithesh-b github io-2023 03 02-15_11_44](https://user-images.githubusercontent.com/115478939/222391500-55b6484c-e758-4a10-b6a0-dfcf8ad1f63f.png)
 
-![img preview](https://user-images.githubusercontent.com/115478939/216237673-6b97b6bc-25a9-49e2-b176-2ae7af155813.png)
+
