@@ -148,11 +148,13 @@ select {
   font-size: 9pt;
   width: 80%;
   height: 30px;
+    cursor: pointer;
 }
 .form__input--date {
   font-size: 9pt;
   width: 80%;
   height: 30px;
+    cursor: pointer;
 }
 .form__input--age {
   font-size: 9pt;
@@ -163,12 +165,14 @@ select {
   font-size: 9pt;
   width: 80%;
   height: 30px;
+   cursor: pointer;
 }
 
 .form__input--description {
   font-size: 9pt;
   height: 40px;
   width: 180%;
+
 }
 
 /* Form submit button styles */
