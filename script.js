@@ -44,7 +44,7 @@ let userForm;
 
 function fetchUserData() {
   return new Promise((resolve, reject) => {
-    fetch("http://localhost:3000/allUserData")
+    fetch("https://tired-wetsuit-hare.cyclic.cloud/allUserData")
       .then((response) => response.json())
       .then((data) => {
         // Process the fetched data
@@ -88,7 +88,7 @@ function fetchUserData() {
 fetchUserData();
 
 function postData(data) {
-  fetch("http://localhost:3000/userData", {
+  fetch("https://tired-wetsuit-hare.cyclic.cloud/userData", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
