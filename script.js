@@ -88,20 +88,24 @@ function fetchUserData() {
 fetchUserData();
 
 function postData(data) {
-  fetch("https://tired-wetsuit-hare.cyclic.cloud/userData", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((responseData) => {
-      console.log("Data sent successfully:", responseData);
+  return new Promise((resolve, reject) => {
+    fetch("https://tired-wetsuit-hare.cyclic.cloud/userData", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     })
-    .catch((error) => {
-      console.error("Error sending data:", error);
-    });
+      .then((response) => response.json())
+      .then((responseData) => {
+        console.log("Data sent successfully:", responseData);
+        resolve(responseData); // Resolve the promise on success
+      })
+      .catch((error) => {
+        console.error("Error sending data:", error);
+        reject(error); // Reject the promise on error
+      });
+  });
 }
 
 let htmlForm;
@@ -159,44 +163,46 @@ form.addEventListener("submit", function (e) {
   };
 
   //send post req
-  postData(htmlForm);
-  // Call the function to initiate the fetching process after post request is done
+  postData(htmlForm)
+    .then((responseData) => {
+      return fetchUserData();
+    })
+    .then(() => {
+      const infoDivs = content.querySelectorAll(".info");
+      infoDivs.forEach((div) => {
+        div.remove();
+      });
+      // Call the function to initiate the fetching process after post request is done
 
-  //load form data to the dom
-  function renderWorkout(input) {
-    let html = `
+      //load form data to the dom
+      function renderWorkout(input) {
+        let html = `
       <div class="info" data-id="${input?._id}">
         <h2>${input.title} </h2><span class= "info_dt"> Date:${formatDate(
-      input.date
-    )}, ${input.time} </span><br>
+          input.date
+        )}, ${input.time} </span><br>
           <h3 class="info_name">${input.username}, ${
-      input.age
-    }</h3> <h3 class="info_gen">Gender: ${input.gender} </h3><br>
+          input.age
+        }</h3> <h3 class="info_gen">Gender: ${input.gender} </h3><br>
             <p>${input.description}</p>
       </div>`;
 
-    // Insert the generated HTML content after the form element
-    form.insertAdjacentHTML("afterend", html);
-  }
+        // Insert the generated HTML content after the form element
+        form.insertAdjacentHTML("afterend", html);
+      }
 
-  form.classList.add("hidden");
+      form.classList.add("hidden");
 
-  fetchUserData().then(() => {
-    const infoDivs = content.querySelectorAll(".info");
-    infoDivs.forEach((div) => {
-      div.remove();
+      // Iterate through userForm data and call renderWorkout for each entry
+
+      if (userForm) {
+        userForm.forEach((data) => {
+          renderWorkout(data);
+        });
+      } else {
+        console.log("User form data is not available yet.");
+      }
     });
-
-    // Iterate through userForm data and call renderWorkout for each entry
-    console.log(userForm);
-    if (userForm) {
-      userForm.forEach((data) => {
-        renderWorkout(data);
-      });
-    } else {
-      console.log("User form data is not available yet.");
-    }
-  });
 
   //make rendered value clickable and pan map to clicked value
   content.addEventListener("click", (e) => {
