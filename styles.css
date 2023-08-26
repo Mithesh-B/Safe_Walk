@@ -4,13 +4,7 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
-@font-face {
-  font-family: "beyno-testregular";
-  src: url("beyno-test-regular-webfont.woff2") format("woff2"),
-    url("beyno-test-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -39,7 +33,7 @@ textarea {
 }
 
 body {
-  font-family: "Source Code Pro", sans-serif;
+font-family: 'Varela Round', sans-serif;
 
   height: 100vh;
   display: flex;
@@ -53,7 +47,7 @@ body {
   width: 90%;
   align-self: center;
   color: rgb(49, 49, 49);
-
+line-height: 2.3rem;
   font-size: 14px;
 
   padding: 15px;
@@ -107,7 +101,7 @@ mark {
   display: none;
 }
 .center {
-  font-family: "beyno-testregular", "Source Code Pro", sans-serif;
+font-family: 'Varela Round', sans-serif;
   font-size: 20px;
   align-self: center;
   margin-bottom: 10%;
@@ -119,7 +113,7 @@ mark {
 /* Form input styles */
 .form__input {
   color: #6b6b6b;
-  font-family: "Source Code Pro", sans-serif;
+font-family: 'Varela Round', sans-serif;
   background-color: #deece700;
   margin-bottom: 10px;
   border-color: #5e17eb;
@@ -178,7 +172,7 @@ select {
 /* Form submit button styles */
 
 .form__btn {
-  font-family: "Source Code Pro", sans-serif;
+font-family: 'Varela Round', sans-serif;
   background-color: #5e17eb;
   color: rgb(255, 255, 255);
   border-style: solid;
@@ -273,7 +267,7 @@ footer {
 }
 
 .leaflet-popup .leaflet-popup-content {
-  font-family: "Source Code Pro", sans-serif;
+font-family: 'Varela Round', sans-serif;
   font-size: 11px;
 }
 
